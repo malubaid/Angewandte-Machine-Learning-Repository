@@ -21,7 +21,7 @@ from models import (
 def main():
 
     # ------------------------------------------------------
-    # 🔥 Automatically detect project root and subdirectories
+    #  Automatically detect project root and subdirectories
     # ------------------------------------------------------
     project_root = pathlib.Path(__file__).resolve().parent
 
@@ -38,7 +38,7 @@ def main():
     output_dir.mkdir(parents=True, exist_ok=True)
 
     # ----------------------------------------
-    # 🔥 STEP 1: Build dataframes from audio
+    #  STEP 1: Build dataframes from audio
     # ----------------------------------------
     print(">> Reading audio files and extracting MFCC features...")
     dataframes_by_label = build_dataframes_by_label(str(data_root))
@@ -46,13 +46,13 @@ def main():
     combined_df, df_encoded = expand_mfcc_columns_and_encode(dataframes_by_label)
 
     # ----------------------------------------
-    # 🔥 STEP 2: Save output CSV files
+    #  STEP 2: Save output CSV files
     # ----------------------------------------
     print("\n>> Saving CSV files...")
     save_dataframes(combined_df, df_encoded, base_path=str(output_dir))
 
     # ----------------------------------------
-    # 🔥 STEP 3: Feature analysis
+    #  STEP 3: Feature analysis
     # ----------------------------------------
     print("\n>> Feature correlation analysis...")
     combined_df = plot_correlation_and_drop(combined_df)
@@ -61,7 +61,7 @@ def main():
     plot_histograms(combined_df)
 
     # ----------------------------------------
-    # 🔥 STEP 4: Prepare train/test data
+    #  STEP 4: Prepare train/test data
     # ----------------------------------------
     (
         X_train_scaled,
@@ -77,7 +77,7 @@ def main():
     ) = prepare_train_test(df_encoded)
 
     # ----------------------------------------
-    # 🔥 STEP 5: Train models
+    #  STEP 5: Train models
     # ----------------------------------------
     rf, rf_acc = train_random_forest(
         X_train_scaled, y_train_labels,
@@ -100,7 +100,7 @@ def main():
     )
 
     # ----------------------------------------
-    # 🔥 STEP 6: Ensemble model
+    #  STEP 6: Ensemble model
     # ----------------------------------------
     ensemble_acc, ensemble_pred = weighted_ensemble(
         rf, best_knn, nn_model,
@@ -110,7 +110,7 @@ def main():
     )
 
     # ----------------------------------------
-    # 🔥 Final summary
+    #  Final summary
     # ----------------------------------------
     print("\n=== FINAL ACCURACIES ===")
     print(f"Random Forest: {rf_acc:.4f}")

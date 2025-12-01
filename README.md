@@ -12,7 +12,7 @@ All code is structured into reusable modules (`utils.py`, `models.py`, `main.py`
 
 
 
-\## 📁 Project Structure
+\##  Project Structure
 
 
 
@@ -46,11 +46,11 @@ project-root/
 
 
 
-\## 🚀 Features
+\##  Features
 
 
 
-\### 🔊 Audio Processing
+\###  Audio Processing
 
 \- Automatic reading of all audio files in `./data`
 
@@ -62,7 +62,7 @@ project-root/
 
 
 
-\### 📊 Feature Engineering
+\###  Feature Engineering
 
 \- MFCC → DataFrame expansion (`mfcc1`…`mfcc13`)
 
@@ -76,7 +76,7 @@ project-root/
 
 
 
-\### 🤖 Machine Learning Models
+\###  Machine Learning Models
 
 \- \*\*Random Forest Classifier\*\*
 
@@ -102,7 +102,7 @@ project-root/
 
 
 
-\## 🧠 How to Run
+\##  How to Run
 
 
 

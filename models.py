@@ -20,7 +20,7 @@ from tensorflow.keras.callbacks import Callback
 
 
 # -----------------------------------
-# 🔥 Train/test split
+#  Train/test split
 # -----------------------------------
 
 def prepare_train_test(df_encoded):
@@ -61,7 +61,7 @@ def prepare_train_test(df_encoded):
 
 
 # -----------------------------------
-# 🔥 Random Forest
+#  Random Forest
 # -----------------------------------
 
 def train_random_forest(X_train, y_train, X_test, y_test, class_names):
@@ -82,7 +82,7 @@ def train_random_forest(X_train, y_train, X_test, y_test, class_names):
 
 
 # -----------------------------------
-# 🔥 kNN sweep
+#  kNN sweep
 # -----------------------------------
 
 def sweep_knn(X_train, y_train, X_test, y_test, class_names):
@@ -105,7 +105,7 @@ def sweep_knn(X_train, y_train, X_test, y_test, class_names):
 
 
 # -----------------------------------
-# 🔥 NN architecture visualization
+#  NN architecture visualization
 # -----------------------------------
 
 def plot_nn_architecture():
@@ -127,7 +127,7 @@ def plot_nn_architecture():
 
 
 # -----------------------------------
-# 🔥 Train Neural Network
+#  Train Neural Network
 # -----------------------------------
 
 class TargetAccuracy(Callback):
@@ -173,7 +173,7 @@ def train_neural_network(X_train, y_train_onehot, X_test, y_test_onehot, target_
 
 
 # -----------------------------------
-# 🔥 Ensemble Voting
+#  Ensemble Voting
 # -----------------------------------
 
 def weighted_ensemble(rf, knn, nn_model, X_test, y_test, class_names, weights):

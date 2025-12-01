@@ -22,7 +22,7 @@ LABEL_MAPPING = {
 
 
 # -----------------------------------
-# 🔥 Audio feature extraction
+#  Audio feature extraction
 # -----------------------------------
 
 def get_features(clip, sample_rate=SAMPLE_RATE):
@@ -56,7 +56,7 @@ def split_files(file_path, clip_length_sec=2, sample_rate=SAMPLE_RATE):
 
 
 # -----------------------------------
-# 🔥 Create dataframes from audio
+#  Create dataframes from audio
 # -----------------------------------
 
 def build_dataframes_by_label(root_path: str):
@@ -85,7 +85,7 @@ def build_dataframes_by_label(root_path: str):
 
 
 # -----------------------------------
-# 🔥 Expand MFCC arrays & one-hot encode
+#  Expand MFCC arrays & one-hot encode
 # -----------------------------------
 
 def expand_mfcc_columns_and_encode(dataframes_by_label: dict):
@@ -123,7 +123,7 @@ def expand_mfcc_columns_and_encode(dataframes_by_label: dict):
 
 
 # -----------------------------------
-# 🔥 Save CSV
+#  Save CSV
 # -----------------------------------
 
 def save_dataframes(combined_df, df_encoded, base_path="."):
@@ -135,7 +135,7 @@ def save_dataframes(combined_df, df_encoded, base_path="."):
 
 
 # -----------------------------------
-# 🔥 Correlation & histograms
+#  Correlation & histograms
 # -----------------------------------
 
 def plot_correlation_and_drop(combined_df):
